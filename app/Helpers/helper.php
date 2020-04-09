@@ -9,6 +9,19 @@
 
 use Illuminate\Support\Facades\Validator;
 
+#Codigos HTTP
+define('NOT_ACCEPTABLE', 406);
+define('NOT_FOUND', 404);
+define('INTERNAL_SERVER_ERROR', 500);
+define('SERVICE_UNAVAILABLE', 503);
+define('OK', 200);
+define('UNAUTHORIZED', 401);
+define('EXPECTATION_FAILED', 417);
+define('METHOD_NOT_ALLOWED', 405);
+define('FORBIDDEN', 403);
+define('PRECONDITION_FAILED', 412);
+define('MULTIPLE_CHOICES', 300);
+
 if (!function_exists("helper_test")) {
     function helper_test()
     {

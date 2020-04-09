@@ -25,6 +25,24 @@ class ProductController extends Controller
         $this->productRepo = $productRepository;
     }
 
+      /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function searchApi()
+    {
+        if (request()->has('filter') && request()->input('filter') != '') {
+            $list = $this->productRepo->searchProduct(request()->input('filter'));
+        } else {
+            $list = $this->productRepo->listProducts();
+        }
+
+        $products = $list->where('status', 1)->map(function (Product $item) {
+            return $this->transformProduct($item);
+        });
+
+        return $this->ok("Products List",["products"=>$products]);
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

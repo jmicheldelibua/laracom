@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
 
-class HomeController
+class HomeController extends Controller
 {
     /**
      * @var CategoryRepositoryInterface

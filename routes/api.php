@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::namespace('Front')->group(function () {
+	Route::match(['get'],'products',"ProductController@searchApi");
+});
+/*
+Route::group(["middleware"=>"autenticado"],function(){
+
+	Route::group(["namespace"=>"Seguridad"],function(){
+
+		Route::match(['post','put'],'medico/empleado/{id?}',"RegistroUsuarioController@registrar")->name("medico/empleado");
+	});
+});
+
+*/
