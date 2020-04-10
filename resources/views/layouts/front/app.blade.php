@@ -99,6 +99,14 @@
         </nav>
     </header>
 </section>
+<section class="container">
+    <iframe
+    allow="microphone;"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/e40060c5-a0a6-4dd4-9d70-b4b431957007">
+</iframe>
+</section>
 @yield('content')
 
 @include('layouts.front.footer')
